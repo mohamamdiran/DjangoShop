@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import PasswordChangeForm
 
 class SignupForm(UserCreationForm):
     error_css_class = "info"
@@ -20,3 +21,13 @@ class SignupForm(UserCreationForm):
 
         
 
+
+class ChangePasswordForm(PasswordChangeForm):
+    def __init__(self, *args, **kwargs):
+        super(ChangePasswordForm, self).__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'changepassword-form-input'
+
+            self.fields['old_password'].widget.attrs['placeholder'] = "old password"
+            self.fields['new_password1'].widget.attrs['placeholder'] = "new password"
+            self.fields['new_password2'].widget.attrs['placeholder'] = "confirm new password"

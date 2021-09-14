@@ -1,0 +1,63 @@
+.section-1 {
+    width: 90%;
+    background-color: white;
+    margin: 25px auto;
+    padding: 10px;
+}
+
+.infomation {
+    border-bottom: 1px solid #15161d;
+    padding: 10px;
+}
+
+.changepassword {
+    border-bottom: 1px solid #15161d;
+    padding: 10px;
+}
+
+.info {
+    display: inline-block;
+    background-color: #15161d;
+    color: white;
+    width: 48%;
+    padding: 3px 15px;
+    line-height: 1.9;
+}
+
+.changepassword-containt {
+    text-align: center;
+    margin: 30px auto 10px auto;
+}
+
+.changepassword-link {
+    background-color: #d10024;
+    padding: 10px;
+    color: #15161d !important;
+}
+
+.changepassword-link:hover {
+    color: #15161d !important;
+}
+
+.message {
+    background-color: #15161d96;
+    padding: 5px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+    .info {
+        display: block;
+        margin: 5px auto;
+        width: 90%;
+    }
+    .information-containt {
+        margin: auto;
+    }
+    .infomation {
+        text-align: center;
+    }
+    .changepassword {
+        text-align: center;
+    }
+}

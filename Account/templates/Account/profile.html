@@ -1,0 +1,45 @@
+{% extends 'Core/base.html' %}
+{% block title %}Profile{% endblock title %}
+{% block static %}
+<link type="text/css" rel="stylesheet" href="/static/Account/css/profile.css"/>
+
+{% endblock static %}
+{% block nav %}
+	<ul class="main-nav nav navbar-nav">
+		<li><a href="{% url 'Core:Home' %}">Home</a></li>
+		{% for category in DisplayCategories %}
+		<li><a href="/category/{{category.Slug}}/">{{category.Name}}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock nav %}
+
+
+{% block body %}
+	{% for message in messages %}
+		<div class="message">
+			{{message}}
+		</div>
+	{% endfor %}
+
+<div class="section-1">
+    <h5 class="infomation">Information</h5>
+    <div class="information-containt">
+        <h6 class="info">
+            Username: <br>
+            AdminSite1234
+        </h6>
+        <h6 class="info">
+            Email: <br>
+            mohammad.hosein@gmail.com
+
+        </h6>
+    </div>
+    <h5 class="changepassword">Password</h5>
+    <div class="changepassword-containt">
+        <a href="{% url 'Account:change_password' %}" class="changepassword-link">Change Password</a>
+    </div>
+</div>
+
+
+
+{% endblock body %}

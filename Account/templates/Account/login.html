@@ -4,6 +4,16 @@
 <link type="text/css" rel="stylesheet" href="/static/Account/css/login.css"/>
 
 {% endblock static %}
+
+{% block nav %}
+	<ul class="main-nav nav navbar-nav">
+		<li><a href="{% url 'Core:Home' %}">Home</a></li>
+		{% for category in DisplayCategories %}
+		<li><a href="/category/{{category.Slug}}/">{{category.Name}}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock nav %}
+
 {% block body %}
 
 

@@ -3,6 +3,15 @@
 {% block static %}{% endblock static %}
 
 
+{% block nav %}
+	<ul class="main-nav nav navbar-nav">
+		<li class="active"><a href="{% url 'Core:Home' %}">Home</a></li>
+		{% for category in DisplayCategories %}
+		<li><a href="/category/{{category.Slug}}/">{{category.Name}}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock nav %}
+
 {% block body %}
 		<!-- SECTION -->
 		<div class="section">

@@ -28,7 +28,7 @@
 					<ul class="header-links pull-right">
 						<li><a href="https://en.wikipedia.org/wiki/Iranian_rial"><i class="fa fa-dollar"></i>IR</a></li>
 						{% if request.user.is_authenticated %}
-						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+						<li><a href="{% url 'Account:profile' %}"><i class="fa fa-user-o"></i> My Account</a></li>
 						<li><a href="{% url 'Account:logout' %}"> Logout </a></li>
 						{% else %}
 						<li><a href="{% url 'Account:login' %}"><i class="fa fa-user-o"></i>Login /</a><a href="{% url 'Account:signup' %}">/ Signup</a></li>
@@ -48,7 +48,7 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<img src="./img/logo.png" alt="">
+									<img src="/media/img/logo.png" alt="">
 								</a>
 							</div>
 						</div>
@@ -154,12 +154,9 @@
 				<!-- responsive-nav -->
 				<div id="responsive-nav">
 					<!-- NAV -->
-					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="{% url 'Core:Home' %}">Home</a></li>
-						{% for category in DisplayCategories %}
-						<li><a href="/category/{{category.Slug}}/">{{category.Name}}</a></li>
-						{% endfor %}
-					</ul>
+					{% block nav %}
+	
+					{% endblock nav%}
 					<!-- /NAV -->
 				</div>
 				<!-- /responsive-nav -->
