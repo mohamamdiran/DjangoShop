@@ -47,12 +47,12 @@
 						<li><a href="https://www.google.com/maps/place/%D9%82%D9%85%D8%8C+%D8%A7%D8%B3%D8%AA%D8%A7%D9%86+%D9%82%D9%85%D8%8C+%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%E2%80%AD/@34.6887845,50.992152,11z/data=!3m1!4b1!4m5!3m4!1s0x3f93bb6eb88ce195:0xcc35bec1c2604470!8m2!3d34.6415764!4d50.8746035?hl=fa" target="_blank"><i class="fa fa-map-marker"></i> Iran / Qom</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i>IR</a></li>
+						<li><a href="https://en.wikipedia.org/wiki/Iranian_rial"><i class="fa fa-dollar"></i>IR</a></li>
 						{% if request.user.is_authenticated %}
 						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 						<li><a href="{% url 'Account:logout' %}"> Logout </a></li>
 						{% else %}
-						<li><a href="#"><i class="fa fa-user-o"></i>Login</a></li>
+						<li><a href="{% url 'Account:login' %}"><i class="fa fa-user-o"></i>Login</a></li>
 						{% endif %}
 					</ul>
 				</div>
