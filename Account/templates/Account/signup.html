@@ -1,0 +1,40 @@
+{% extends 'Core/base.html' %}
+{% block title %}Signup{% endblock title %}
+{% block static %}
+<link type="text/css" rel="stylesheet" href="/static/Account/css/signup.css"/>
+
+{% endblock static %}
+{% block body %}
+
+
+<form method="post" class="signup-form">
+	{% csrf_token %}
+
+	<div class="form-div">
+	{% for message in messages %}
+		<div class="message">
+			{{message}}
+		</div>
+	{% endfor %}
+	
+		{% for field in form %}  
+			{% if field.errors %}
+				<div class="message">
+					{{field.errors}}
+				</div>
+				<hr>
+			{% endif %}
+		{% endfor %}
+		<div class="form-div">
+			{% for field in form %}  
+					{{ field }}                 
+			{% endfor %}
+		</div>
+		<input class="submit-form" type="submit" value="Signup">
+	</div>
+	
+</form>
+
+
+
+{% endblock body %}

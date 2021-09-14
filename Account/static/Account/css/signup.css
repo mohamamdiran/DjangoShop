@@ -1,0 +1,37 @@
+.form-div {
+    border: 1m solid #777;
+    padding: 15px 25px;
+    display: block;
+    box-shadow: 2px 2px 10px gray;
+    margin: 25px 25px;
+    text-align: center;
+}
+
+.submit-form {
+    border: none;
+    background-color: #d10024;
+    padding: 4px 5px;
+    margin: 20px auto 10px auto;
+}
+
+.message {
+    background-color: #15161d96;
+    padding: 6px;
+    background-color: #d10024;
+}
+
+.signup-form-input {
+    margin: 10px auto;
+    border: none;
+    text-align: center;
+    background-color: #15161d;
+    height: 35px;
+    color: white;
+    display: block;
+}
+
+@media only screen and (max-width: 500px) {
+    .signup-form-input {
+        width: 90%;
+    }
+}

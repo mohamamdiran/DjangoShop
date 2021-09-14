@@ -31,7 +31,7 @@
 						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 						<li><a href="{% url 'Account:logout' %}"> Logout </a></li>
 						{% else %}
-						<li><a href="{% url 'Account:login' %}"><i class="fa fa-user-o"></i>Login</a></li>
+						<li><a href="{% url 'Account:login' %}"><i class="fa fa-user-o"></i>Login /</a><a href="{% url 'Account:signup' %}">/ Signup</a></li>
 						{% endif %}
 					</ul>
 				</div>
@@ -167,6 +167,8 @@
 			<!-- /container -->
 		</nav>
 		<!-- /NAVIGATION -->
+
+        {% block body %}{% endblock body %}
 
 		<!-- FOOTER -->
 		<footer id="footer">

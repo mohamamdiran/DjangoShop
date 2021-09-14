@@ -9,5 +9,6 @@ app_name = "Account"
 urlpatterns = [
     path("logout/", LogoutView.as_view(), name="logout"),
     path("login/",views.login, name="login"),
+    path("signup/",views.signup, name="signup"),
 ]
 
