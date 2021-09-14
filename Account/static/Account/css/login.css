@@ -1,4 +1,4 @@
-.signup-form {
+.login-form {
     padding: 5px 25px;
     margin: 55px auto;
     text-align: center;
@@ -24,11 +24,11 @@
     padding: 5px;
 }
 
-.signup-form-input {
-    margin: 10px;
+.login-form-input {
+    margin: 10px auto;
     border: none;
     text-align: center;
-    background-color: #15161d;
     height: 35px;
-    color: white;
+    background-color: #9e9e9e33;
+    display: block;
 }

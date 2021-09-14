@@ -6,35 +6,35 @@
 {% endblock static %}
 {% block body %}
 
-
-<form method="post" class="signup-form">
-	{% csrf_token %}
-
-	<div class="form-div">
-	{% for message in messages %}
-		<div class="message">
-			{{message}}
-		</div>
-	{% endfor %}
-	
-		{% for field in form %}  
-			{% if field.errors %}
-				<div class="message">
-					{{field.errors}}
-				</div>
-				<hr>
-			{% endif %}
-		{% endfor %}
+<div class="all-form">
+	<form method="post" class="signup-form">
+		{% csrf_token %}
 		<div class="form-div">
+		<h3>Signup</h3><hr>
+		{% for message in messages %}
+			<div class="message">
+				{{message}}
+			</div>
+		{% endfor %}
+		
 			{% for field in form %}  
-					{{ field }}                 
+				{% if field.errors %}
+					<div class="message">
+						{{field.errors}}
+					</div>
+					<hr>
+				{% endif %}
 			{% endfor %}
+			<div class="form-div">
+				{% for field in form %}  
+						{{ field }}                 
+				{% endfor %}
+				<input class="submit-form" type="submit" value="Signup">
+			</div>
+			
 		</div>
-		<input class="submit-form" type="submit" value="Signup">
-	</div>
-	
-</form>
-
+	</form>
+</div>
 
 
 {% endblock body %}
