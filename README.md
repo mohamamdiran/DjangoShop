@@ -1,2 +1,2 @@
 # DjangoShop
-This is a Django Project
+DjangoShop is a AI-powered shop system written in python/django
