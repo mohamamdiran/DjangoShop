@@ -28,7 +28,7 @@
 							</div>
 							<div class="shop-body">
 								<h3>{{category.Name}}</h3>
-								<a href="/category/{{category.Slug}}/" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="/category/{{category.id}}/" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -71,17 +71,21 @@
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
-												<img src="{{product.Image.url}}" alt="">{{product.IsNewProduct}}
+												<img src="{{product.Image.url}}" alt="">
 												<div class="product-label">
 													<span class="sale">-30%</span>
-													<span class="new">NEW</span>
+													{% if product.IsNewProduct %}
+														<span class="new">NEW</span>
+													{% endif %}
 												</div>
 											</div>
 											<div class="product-body">
-												<p class="product-category">{{product.Category}}</p>
-												<h3 class="product-name"><a href="#">{{product.Name}}</a></h3>
-												<h4 class="product-price">{{product.Price}}</h4>
+													<p class="product-category">{% for category in product.Category.all %} <a href="/category/{{category.Slug}}/"> {{category.Name}} </a> / {% endfor %}</p>
+												<h3 class="product-name"><a href="/product/{{product.id}}/">{{product.Name}}</a></h3>
+												<h4 class="product-price">${{product.Price}}</h4>
 												<div class="product-rating">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
@@ -191,12 +195,14 @@
 												<img src="{{product.Image.url}}" alt="">
 												<div class="product-label">
 													<span class="sale">-30%</span>
-													<span class="new">NEW</span>
+													{% if product.IsNewProduct %}
+														<span class="new">NEW</span>
+													{% endif %}
 												</div>
 											</div>
 											<div class="product-body">
-												<p class="product-category">{{product.Category}}</p>
-												<h3 class="product-name"><a href="">{{product.Name}}</a></h3>
+													<p class="product-category">{% for category in product.Category.all %} <a href="/category/{{category.Slug}}/"> {{category.Name}} </a> / {% endfor %}</p>
+												<h3 class="product-name"><a href="/product/{{product.id}}/">{{product.Name}}</a></h3>
 												<h4 class="product-price">${{product.Price}}</h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>

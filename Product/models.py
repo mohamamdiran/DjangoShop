@@ -18,10 +18,9 @@ class Product(models.Model):
     Description = models.TextField(max_length=250)
     Price = models.DecimalField(max_digits=8, decimal_places=2)
     # Relationship Fields
-    Category = models.ForeignKey(
+    Category = models.ManyToManyField(
         'Category', 
-        on_delete=models.CASCADE,
-        related_name='category'
+        related_name='Category'
     )
     Date = models.DateTimeField(auto_now_add=True)
     
@@ -57,7 +56,7 @@ class Product(models.Model):
 
 class category(models.Model):
     Name = models.CharField(max_length=155)
-    Slug = extension_fields.AutoSlugField(populate_from='name', blank=True)
+    Slug = extension_fields.AutoSlugField(populate_from='Name', blank=True)
     Image = models.ImageField(upload_to="CategoryImage/")
     AddToTop = models.BooleanField(default=False)
     AddToListCategory = models.BooleanField(default=True)

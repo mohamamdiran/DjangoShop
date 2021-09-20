@@ -1,3 +1,4 @@
+from django.http import request
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth, User
 from django.contrib import messages
@@ -5,7 +6,8 @@ from django.views.generic import FormView, ListView
 from .forms import SignupForm, ChangePasswordForm
 from Product.models import category
 from django.contrib.auth import update_session_auth_hash
-
+from .models import Cart, Order
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def login(request):
@@ -42,7 +44,7 @@ def signup(request):
 
 
 def profile(request):
-    var = {}
+    var = {'AllCategories':category.objects.all()}
     return render(request, 'Account/profile.html',var)
     
 def ChangePassword(request):
@@ -60,9 +62,6 @@ def ChangePassword(request):
     return render(request, 'Account/change_password.html', {'form': form,'AllCategories':category.objects.all(),})
 
 
-# class Cart(ListView):
-#     model = 
-#     def get_queryset(self, *args, **kwargs):
-#         querySet = super(Cart, self).get_queryset(*args, **kwargs)
-#         querySet = querySet.order_by("-id")
-#         return querySet
+class CartList(LoginRequiredMixin, ListView):
+    model = Cart
+    context_object_name = 'object_list'

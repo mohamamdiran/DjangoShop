@@ -1,0 +1,53 @@
+{% extends 'Core/base.html' %}
+{% block title %}Profile | Cart{% endblock title %}
+{% block static %}
+<link type="text/css" rel="stylesheet" href="/static/Account/css/cart.css"/>
+
+{% endblock static %}
+
+{% block nav %}
+	<ul class="main-nav nav navbar-nav">
+		<li><a href="{% url 'Core:Home' %}">Home</a></li>
+		{% for category in DisplayCategories %}
+		<li><a href="/category/{{category.Slug}}/">{{category.Name}}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock nav %}
+
+{% block body %}
+
+
+{% for object in object_list %}
+	<div class="slick-track" style="opacity: 1; width: 343px; transform: translate3d(0px, 0px, 0px);">
+		<div class="product slick-slide slick-current slick-active" tabindex="0" style="width: 313px;" data-slick-index="0" aria-hidden="false">
+			<div class="product-img">
+				<img src="{{object.Image.url}}" alt="">True
+				<div class="product-label">
+					<span class="sale">-30%</span>
+					<span class="new">NEW</span>
+				</div>
+			</div>
+			<div class="product-body">
+				<p class="product-category">{{object.Category}}</p>
+				<h3 class="product-name"><a href="#" tabindex="0">{{Category.Name}}</a></h3>
+				<h4 class="product-price">{{object.Price}}</h4>
+				<div class="product-rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+				<div class="product-btns">
+					<button class="add-to-wishlist" tabindex="0"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+					<button class="add-to-compare" tabindex="0"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+					<button class="quick-view" tabindex="0"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+				</div>
+			</div>
+			<div class="add-to-cart">
+				<button class="add-to-cart-btn" tabindex="0"><i class="fa fa-shopping-cart"></i> add to cart</button>
+			</div>
+		</div>
+	</div>
+{% endfor %}
+
+
+{% endblock body %}
