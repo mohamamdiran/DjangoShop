@@ -6,4 +6,6 @@ DjangoShop is an AI-powered shop system written in python/django
 - Fully Featured Shop System
 - You can use its recommander system in your django shop systems **[WIP]**
  
+## License
+[MIT](LICENSE)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
