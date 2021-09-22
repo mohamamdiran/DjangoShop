@@ -20,8 +20,13 @@ $ cd DjangoShop
 $ python manage.py makemigrations
 $ python manage.py migrate
 $ python manage.py createsuperuser
+Username:
+Email Address:
+Password:
+Password (again):
 $ python manage.py runserver
 ```
+- Open website on your browser ---> [127.0.0.1:8000](http://127.0.0.1:8000/)
 
 ## License
 [MIT](LICENSE)
