@@ -28,6 +28,13 @@ $ python manage.py runserver
 ```
 - Open website on your browser ---> [127.0.0.1:8000](http://127.0.0.1:8000/)
 
+## How to contribute?
+- Fork the repo
+- Clone your forked repo
+- Add your changes
+- Push your changes to your forked repo
+- Send a pull request
+
 ## License
 [MIT](LICENSE)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
