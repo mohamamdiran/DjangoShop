@@ -26,7 +26,7 @@ Password:
 Password (again):
 $ python manage.py runserver
 ```
-- Open website on your browser ---> [127.0.0.1:8000](http://127.0.0.1:8000/)
+- Open website on your browser &rarr; [127.0.0.1:8000](http://127.0.0.1:8000/)
 
 ## How to contribute?
 - Fork the repo
